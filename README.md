@@ -17,7 +17,7 @@
 # 安装&升级
 
 ```
-bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
+
 ```
 
 ## 手动安装&升级
@@ -38,33 +38,6 @@ mv x-ui/ /usr/local/
 systemctl daemon-reload
 systemctl enable x-ui
 systemctl restart x-ui
-```
-
-## 使用docker安装
-
-> 此 docker 教程与 docker 镜像由[Chasing66](https://github.com/Chasing66)提供
-
-1. 安装docker
-
-```shell
-curl -fsSL https://get.docker.com | sh
-```
-
-2. 安装x-ui
-
-```shell
-mkdir x-ui && cd x-ui
-docker run -itd --network=host \
-    -v $PWD/db/:/etc/x-ui/ \
-    -v $PWD/cert/:/root/cert/ \
-    --name x-ui --restart=unless-stopped \
-    enwaiax/x-ui:latest
-```
-
-> Build 自己的镜像
-
-```shell
-docker build -t x-ui .
 ```
 
 ## SSL证书申请
